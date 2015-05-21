@@ -24,6 +24,10 @@
 		9C519EA51B0E524A00A8044D /* flower3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9C519EA01B0E524A00A8044D /* flower3.jpg */; };
 		9C519EA61B0E524A00A8044D /* flower4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9C519EA11B0E524A00A8044D /* flower4.jpg */; };
 		9C519EA71B0E524A00A8044D /* flower5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9C519EA21B0E524A00A8044D /* flower5.jpg */; };
+		9C519EB01B0E54EB00A8044D /* InstaCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C519EAF1B0E54EB00A8044D /* InstaCollectionViewCell.m */; };
+		9C519EB61B0E662000A8044D /* InstaCollectionReusableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C519EB51B0E662000A8044D /* InstaCollectionReusableHeaderView.m */; };
+		9C519EB91B0E728A00A8044D /* MyImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C519EB81B0E728A00A8044D /* MyImage.m */; };
+		9C519EBC1B0E739600A8044D /* ImageCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C519EBB1B0E739600A8044D /* ImageCollection.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +64,14 @@
 		9C519EA01B0E524A00A8044D /* flower3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = flower3.jpg; sourceTree = "<group>"; };
 		9C519EA11B0E524A00A8044D /* flower4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = flower4.jpg; sourceTree = "<group>"; };
 		9C519EA21B0E524A00A8044D /* flower5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = flower5.jpg; sourceTree = "<group>"; };
+		9C519EAE1B0E54EB00A8044D /* InstaCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstaCollectionViewCell.h; sourceTree = "<group>"; };
+		9C519EAF1B0E54EB00A8044D /* InstaCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstaCollectionViewCell.m; sourceTree = "<group>"; };
+		9C519EB41B0E662000A8044D /* InstaCollectionReusableHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstaCollectionReusableHeaderView.h; sourceTree = "<group>"; };
+		9C519EB51B0E662000A8044D /* InstaCollectionReusableHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstaCollectionReusableHeaderView.m; sourceTree = "<group>"; };
+		9C519EB71B0E728A00A8044D /* MyImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyImage.h; sourceTree = "<group>"; };
+		9C519EB81B0E728A00A8044D /* MyImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyImage.m; sourceTree = "<group>"; };
+		9C519EBA1B0E739600A8044D /* ImageCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageCollection.h; sourceTree = "<group>"; };
+		9C519EBB1B0E739600A8044D /* ImageCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageCollection.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +117,14 @@
 				9C519E731B0E35F300A8044D /* AppDelegate.m */,
 				9C519E751B0E35F300A8044D /* ViewController.h */,
 				9C519E761B0E35F300A8044D /* ViewController.m */,
+				9C519EAE1B0E54EB00A8044D /* InstaCollectionViewCell.h */,
+				9C519EAF1B0E54EB00A8044D /* InstaCollectionViewCell.m */,
+				9C519EB41B0E662000A8044D /* InstaCollectionReusableHeaderView.h */,
+				9C519EB51B0E662000A8044D /* InstaCollectionReusableHeaderView.m */,
+				9C519EBA1B0E739600A8044D /* ImageCollection.h */,
+				9C519EBB1B0E739600A8044D /* ImageCollection.m */,
+				9C519EB71B0E728A00A8044D /* MyImage.h */,
+				9C519EB81B0E728A00A8044D /* MyImage.m */,
 				9C519E781B0E35F300A8044D /* Main.storyboard */,
 				9C519E7B1B0E35F300A8044D /* Images.xcassets */,
 				9C519E7D1B0E35F300A8044D /* LaunchScreen.xib */,
@@ -261,6 +281,10 @@
 			files = (
 				9C519E771B0E35F300A8044D /* ViewController.m in Sources */,
 				9C519E741B0E35F300A8044D /* AppDelegate.m in Sources */,
+				9C519EB01B0E54EB00A8044D /* InstaCollectionViewCell.m in Sources */,
+				9C519EB91B0E728A00A8044D /* MyImage.m in Sources */,
+				9C519EBC1B0E739600A8044D /* ImageCollection.m in Sources */,
+				9C519EB61B0E662000A8044D /* InstaCollectionReusableHeaderView.m in Sources */,
 				9C519E711B0E35F300A8044D /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
