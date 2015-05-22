@@ -19,6 +19,8 @@
 }
 
 @property (nonatomic, weak) IBOutlet UICollectionView *myCollectionView;
+@property (nonatomic, weak) IBOutlet UISegmentedControl *segmentControl;
+@property (nonatomic, strong) ImageCollection *imageCollection;
 
 @end
 
@@ -27,12 +29,23 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    ImageCollection *imageCollection= [[ImageCollection alloc] init];
-    _imageArray = [imageCollection getArrayBySubject];
+    self.imageCollection = [[ImageCollection alloc] init];
+    _imageArray = [self.imageCollection getArrayBySubject];
     
     InstaFlowLayout *flowLayout = [[InstaFlowLayout alloc] init];
     flowLayout.headerReferenceSize = CGSizeMake(self.myCollectionView.frame.size.width, 20);
     [self.myCollectionView setCollectionViewLayout:flowLayout];
+    
+    [self.segmentControl addTarget:self action:@selector(changeSubjectOrLocation:) forControlEvents:UIControlEventValueChanged];
+}
+
+-(IBAction)changeSubjectOrLocation:(UISegmentedControl *)sender {
+    if (sender.selectedSegmentIndex == 1) {
+        _imageArray = [self.imageCollection getArrayByLocation];
+    } else {
+        _imageArray = [self.imageCollection getArrayBySubject];
+    }
+    [self.myCollectionView reloadData];
 }
 
 #pragma mark - CollectionView datasource and delegate
