@@ -28,6 +28,9 @@
 		9C519EB61B0E662000A8044D /* InstaCollectionReusableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C519EB51B0E662000A8044D /* InstaCollectionReusableHeaderView.m */; };
 		9C519EB91B0E728A00A8044D /* MyImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C519EB81B0E728A00A8044D /* MyImage.m */; };
 		9C519EBC1B0E739600A8044D /* ImageCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C519EBB1B0E739600A8044D /* ImageCollection.m */; };
+		9C519EBF1B0E8BD700A8044D /* DecorationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C519EBE1B0E8BD700A8044D /* DecorationView.m */; };
+		9C519EC11B0E8DB500A8044D /* flora.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C519EC01B0E8DB500A8044D /* flora.png */; };
+		9C519EC41B0E9AD100A8044D /* InstaFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C519EC31B0E9AD100A8044D /* InstaFlowLayout.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +75,11 @@
 		9C519EB81B0E728A00A8044D /* MyImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyImage.m; sourceTree = "<group>"; };
 		9C519EBA1B0E739600A8044D /* ImageCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageCollection.h; sourceTree = "<group>"; };
 		9C519EBB1B0E739600A8044D /* ImageCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageCollection.m; sourceTree = "<group>"; };
+		9C519EBD1B0E8BD700A8044D /* DecorationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DecorationView.h; sourceTree = "<group>"; };
+		9C519EBE1B0E8BD700A8044D /* DecorationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DecorationView.m; sourceTree = "<group>"; };
+		9C519EC01B0E8DB500A8044D /* flora.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flora.png; sourceTree = "<group>"; };
+		9C519EC21B0E9AD100A8044D /* InstaFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstaFlowLayout.h; sourceTree = "<group>"; };
+		9C519EC31B0E9AD100A8044D /* InstaFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstaFlowLayout.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,10 +125,14 @@
 				9C519E731B0E35F300A8044D /* AppDelegate.m */,
 				9C519E751B0E35F300A8044D /* ViewController.h */,
 				9C519E761B0E35F300A8044D /* ViewController.m */,
+				9C519EC21B0E9AD100A8044D /* InstaFlowLayout.h */,
+				9C519EC31B0E9AD100A8044D /* InstaFlowLayout.m */,
 				9C519EAE1B0E54EB00A8044D /* InstaCollectionViewCell.h */,
 				9C519EAF1B0E54EB00A8044D /* InstaCollectionViewCell.m */,
 				9C519EB41B0E662000A8044D /* InstaCollectionReusableHeaderView.h */,
 				9C519EB51B0E662000A8044D /* InstaCollectionReusableHeaderView.m */,
+				9C519EBD1B0E8BD700A8044D /* DecorationView.h */,
+				9C519EBE1B0E8BD700A8044D /* DecorationView.m */,
 				9C519EBA1B0E739600A8044D /* ImageCollection.h */,
 				9C519EBB1B0E739600A8044D /* ImageCollection.m */,
 				9C519EB71B0E728A00A8044D /* MyImage.h */,
@@ -136,6 +148,7 @@
 		9C519E6E1B0E35F300A8044D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				9C519EC01B0E8DB500A8044D /* flora.png */,
 				9C519E9E1B0E524A00A8044D /* flower1.jpg */,
 				9C519E9F1B0E524A00A8044D /* flower2.jpg */,
 				9C519EA01B0E524A00A8044D /* flower3.jpg */,
@@ -255,6 +268,7 @@
 				9C519E7A1B0E35F300A8044D /* Main.storyboard in Resources */,
 				9C519E9B1B0E523F00A8044D /* mountain3.jpg in Resources */,
 				9C519E7F1B0E35F300A8044D /* LaunchScreen.xib in Resources */,
+				9C519EC11B0E8DB500A8044D /* flora.png in Resources */,
 				9C519EA51B0E524A00A8044D /* flower3.jpg in Resources */,
 				9C519EA41B0E524A00A8044D /* flower2.jpg in Resources */,
 				9C519E9D1B0E523F00A8044D /* mountain5.jpg in Resources */,
@@ -285,7 +299,9 @@
 				9C519EB91B0E728A00A8044D /* MyImage.m in Sources */,
 				9C519EBC1B0E739600A8044D /* ImageCollection.m in Sources */,
 				9C519EB61B0E662000A8044D /* InstaCollectionReusableHeaderView.m in Sources */,
+				9C519EBF1B0E8BD700A8044D /* DecorationView.m in Sources */,
 				9C519E711B0E35F300A8044D /* main.m in Sources */,
+				9C519EC41B0E9AD100A8044D /* InstaFlowLayout.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -476,6 +492,7 @@
 				9C519E901B0E35F300A8044D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9C519E911B0E35F300A8044D /* Build configuration list for PBXNativeTarget "InstaKiloTests" */ = {
 			isa = XCConfigurationList;
@@ -484,6 +501,7 @@
 				9C519E931B0E35F300A8044D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

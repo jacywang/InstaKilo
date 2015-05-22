@@ -37,7 +37,6 @@
         if (dict[image.subject]) {
             [dict[image.subject] addObject:image];
         } else {
-//            [dict setValue:[NSMutableArray arrayWithObject:image] forKey:image.subject];
             dict[image.subject] = [NSMutableArray arrayWithArray:@[image]];
         }
     }

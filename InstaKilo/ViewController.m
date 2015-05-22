@@ -11,6 +11,8 @@
 #import "InstaCollectionReusableHeaderView.h"
 #import "ImageCollection.h"
 #import "MyImage.h"
+#import "DecorationView.h"
+#import "InstaFlowLayout.h"
 
 @interface ViewController () {
     NSMutableArray *_imageArray;
@@ -28,6 +30,9 @@
     ImageCollection *imageCollection= [[ImageCollection alloc] init];
     _imageArray = [imageCollection getArrayBySubject];
     
+    InstaFlowLayout *flowLayout = [[InstaFlowLayout alloc] init];
+    flowLayout.headerReferenceSize = CGSizeMake(self.myCollectionView.frame.size.width, 20);
+    [self.myCollectionView setCollectionViewLayout:flowLayout];
 }
 
 #pragma mark - CollectionView datasource and delegate
@@ -58,11 +63,6 @@
     }
     
     return reusableView;
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end
