@@ -18,6 +18,12 @@
 
 #define RADIANS(degrees) ((degrees * M_PI) / 180.0)
 
+@interface InstaFlowLayout()
+
+@property (nonatomic, strong) NSMutableArray *deleteIndexPaths;
+
+@end
+
 @implementation InstaFlowLayout
 
 -(instancetype)init {
@@ -33,7 +39,7 @@
 }
 
 -(UICollectionViewLayoutAttributes *)layoutAttributesForDecorationViewOfKind:(NSString *)elementKind atIndexPath:(NSIndexPath *)indexPath {
-    UICollectionViewLayoutAttributes *decorationAttributes = [UICollectionViewLayoutAttributes layoutAttributesForDecorationViewOfKind:[DecorationView kind] withIndexPath:indexPath];
+    UICollectionViewLayoutAttributes *decorationAttributes = [UICollectionViewLayoutAttributes layoutAttributesForDecorationViewOfKind:elementKind withIndexPath:indexPath];
     
     decorationAttributes.frame = CGRectMake(0.0, 0.0, self.collectionViewContentSize.width, self.collectionViewContentSize.height);
     decorationAttributes.zIndex = 0;
@@ -46,7 +52,6 @@
     NSMutableArray* allAttributes = [[super layoutAttributesForElementsInRect:rect] mutableCopy];
     
     // Determine attributes for cells, supplementary views, and decoration views in rectangle
-    
     for (UICollectionViewLayoutAttributes* attributes in allAttributes) {
         
         // All elements initially at Z level 1
@@ -60,6 +65,46 @@
     [allAttributes addObject:[self layoutAttributesForDecorationViewOfKind:[DecorationView kind] atIndexPath:[NSIndexPath indexPathForItem:0 inSection:0]]];
     
     return allAttributes;
+}
+
+- (void)prepareForCollectionViewUpdates:(NSArray *)updateItems
+{
+    // Keep track of insert and delete index paths
+    [super prepareForCollectionViewUpdates:updateItems];
+    
+    self.deleteIndexPaths = [NSMutableArray array];
+    
+    for (UICollectionViewUpdateItem *update in updateItems)
+    {
+        if (update.updateAction == UICollectionUpdateActionDelete)
+        {
+            [self.deleteIndexPaths addObject:update.indexPathBeforeUpdate];
+        }
+    }
+}
+
+- (void)finalizeCollectionViewUpdates
+{
+    [super finalizeCollectionViewUpdates];
+    // release the insert and delete index paths
+    self.deleteIndexPaths = nil;
+}
+
+-(UICollectionViewLayoutAttributes *)finalLayoutAttributesForDisappearingItemAtIndexPath:(NSIndexPath *)itemIndexPath {
+    UICollectionViewLayoutAttributes *attributes = [super finalLayoutAttributesForDisappearingItemAtIndexPath:itemIndexPath];
+    
+    if ([self.deleteIndexPaths containsObject:itemIndexPath])
+    {
+        // only change attributes on deleted cells
+        if (!attributes) {
+            attributes = [self layoutAttributesForItemAtIndexPath:itemIndexPath];
+        }
+        // Configure attributes ...
+        CGRect rect = attributes.frame;
+        attributes.frame = CGRectMake(self.collectionView.center.x, self.collectionView.superview.bounds.size.height, rect.size.width, rect.size.height);
+    }
+    
+    return attributes;
 }
 
 + (void)tweakCellAttributes:(UICollectionViewLayoutAttributes*)cellAttributes {

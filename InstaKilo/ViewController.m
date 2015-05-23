@@ -37,6 +37,11 @@
     [self.myCollectionView setCollectionViewLayout:flowLayout];
     
     [self.segmentControl addTarget:self action:@selector(changeSubjectOrLocation:) forControlEvents:UIControlEventValueChanged];
+    
+    UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(deleteByTap:)];
+    tapRecognizer.numberOfTapsRequired = 2;
+    tapRecognizer.numberOfTouchesRequired = 1;
+    [self.myCollectionView addGestureRecognizer:tapRecognizer];
 }
 
 -(IBAction)changeSubjectOrLocation:(UISegmentedControl *)sender {
@@ -46,6 +51,17 @@
         _imageArray = [self.imageCollection getArrayBySubject];
     }
     [self.myCollectionView reloadData];
+}
+
+-(IBAction)deleteByTap:(UITapGestureRecognizer *)sender {
+    CGPoint tapPoint = [sender locationInView:self.myCollectionView];
+    NSIndexPath *indexPath = [self.myCollectionView indexPathForItemAtPoint:tapPoint];
+    if (indexPath) {
+        [_imageArray[indexPath.section][1] removeObjectAtIndex:indexPath.row];
+        [self.myCollectionView performBatchUpdates:^{
+            [self.myCollectionView deleteItemsAtIndexPaths:@[indexPath]];
+        } completion:nil];
+    }
 }
 
 #pragma mark - CollectionView datasource and delegate
