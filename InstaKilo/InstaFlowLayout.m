@@ -58,7 +58,7 @@
         attributes.zIndex = 1;
         
         // Cells
-        //[InstaFlowLayout tweakCellAttributes:attributes];
+        [InstaFlowLayout tweakCellAttributes:attributes];
     }
     
     // Decorator
